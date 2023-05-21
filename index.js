@@ -4,7 +4,7 @@ var n = document.querySelectorAll(".drum").length;
 for(var i=0; i<n; i++) {
     var btnClick = document.querySelectorAll("button")[i].addEventListener("click" , function() {
     
-        makeSound(click.innerHTML)
+        makeSound(this.innerHTML)
     });
 }
 
