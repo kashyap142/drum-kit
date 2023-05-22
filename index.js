@@ -4,14 +4,16 @@ var n = document.querySelectorAll(".drum").length;
 for(var i=0; i<n; i++) {
     var btnClick = document.querySelectorAll("button")[i].addEventListener("click" , function() {
     
-        makeSound(this.innerHTML)
+        makeSound(this.innerHTML);
+        buttonAnimation(this.innerHTML);
     });
 }
 
 
 // keypress detector
 document.addEventListener("keydown",function(event) {
-    makeSound(event.key)
+    makeSound(event.key);
+    buttonAnimation(event.key);
 });
 
 
@@ -54,3 +56,11 @@ function makeSound(key) {
     }
 }
 
+
+function buttonAnimation(currentKey) {
+    var key = document.querySelector("." + currentKey);
+    key.classList.toggle("pressed");
+    setTimeout(function() {
+        key.classList.remove("pressed");
+    } , 100);
+}
