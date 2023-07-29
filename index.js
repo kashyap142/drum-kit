@@ -1,9 +1,10 @@
 var n = document.querySelectorAll(".drum").length;
 
+var clickButtons = ['w','a','s','d','j','k','l'];
+
 // button click detector
 for(var i=0; i<n; i++) {
-    var btnClick = document.querySelectorAll("button")[i].addEventListener("click" , function() {
-    
+    var btnClick = document.querySelectorAll("button")[i].addEventListener("click" , function() {    
         makeSound(this.innerHTML);
         buttonAnimation(this.innerHTML);
     });
@@ -12,8 +13,11 @@ for(var i=0; i<n; i++) {
 
 // keypress detector
 document.addEventListener("keydown",function(event) {
-    makeSound(event.key);
-    buttonAnimation(event.key);
+    var key = event.key;
+    if(clickButtons.includes(event.key)) {
+        makeSound(event.key);
+        buttonAnimation(event.key);
+    }
 });
 
 
