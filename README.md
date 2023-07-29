@@ -1,7 +1,7 @@
 
 # Drum Kit
 
-Followig Angela Course on Udemy
+Following Angela Course on Udemy
 
 
 ## Play here
